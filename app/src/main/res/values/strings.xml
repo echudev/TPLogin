@@ -2,9 +2,10 @@
     <string name="app_name">TPLogin</string>
     <string name="activity1_title">Bienvenido!</string>
     <string name="subtitle">Ingrese sus datos</string>
-    <string name="usertHint">Usuario</string>
+    <string name="userHint">Usuario</string>
     <string name="passHint">Contraseña</string>
     <string name="entrar">Entrar</string>
     <string name="registrar">RegistrAR</string>
+    <string name="user_welcome">Bienvenido %s</string>
     <string name="mantener_sesion_iniciada">Mantener sesión iniciada</string>
 </resources>

@@ -10,7 +10,7 @@ import com.ifts.tplogin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    // Binding para obtener id de los elementos de la vista
+    // Binding to obtain id from view elements
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
 
         // use the binding to access toEditText & Button
         binding.btnLogin.setOnClickListener {
-            val user = binding.editTextUser.text.toString().toIntOrNull() ?: 0
-            val password = binding.editTextPass.text.toString().toIntOrNull() ?: 0
+            val user = binding.editTextUser.text.toString()
+            val password = binding.editTextPass.text.toString()
 
-            // Create an explicit Intent to go to ResultActivity
+            // Create an explicit Intent to go to HomeActivity
             val intent = Intent(this, HomeActivity::class.java)
 
-            // Pass the sum value to the Intent
+            // Inject the user value into the Intent
             intent.putExtra("user", user)
 
             // Init the new Activity
