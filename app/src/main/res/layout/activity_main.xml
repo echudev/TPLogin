@@ -8,26 +8,26 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity1_title"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/btnRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.134" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/loginMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/subtitle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintStart_toEndOf="@+id/keepLoggedCheckBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
@@ -42,7 +42,7 @@
         android:hint="@string/usertHint"
         android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/loginMessage" />
 
     <EditText
         android:id="@+id/editTextPass"
@@ -57,29 +57,29 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginBottom="25dp"
         android:text="@string/entrar"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/button2" />
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintStart_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/btnRegister" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="28dp"
         android:text="@string/registrar"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/checkBox" />
+        app:layout_constraintBottom_toTopOf="@+id/keepLoggedCheckBox"
+        app:layout_constraintStart_toEndOf="@+id/loginMessage"
+        app:layout_constraintStart_toStartOf="@+id/keepLoggedCheckBox" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/keepLoggedCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="180dp"

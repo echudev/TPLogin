@@ -1,4 +1,4 @@
-package com.example.tplogin
+package com.ifts.tplogin
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
