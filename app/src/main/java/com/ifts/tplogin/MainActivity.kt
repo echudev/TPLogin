@@ -2,6 +2,7 @@ package com.ifts.tplogin
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -29,17 +30,26 @@ class MainActivity : AppCompatActivity() {
 
         // use the binding to access toEditText & Button
         binding.btnLogin.setOnClickListener {
-            val user = binding.editTextUser.text.toString()
+            val name = binding.editTextUser.text.toString()
             val password = binding.editTextPass.text.toString()
 
-            // Create an explicit Intent to go to HomeActivity
-            val intent = Intent(this, HomeActivity::class.java)
+            var user: User? = null
+            try {
+                user = User(name, password)
+            } catch (e: IllegalArgumentException) {
+                Toast.makeText(this, "Invalid user data", Toast.LENGTH_SHORT).show()
+            }
 
-            // Inject the user value into the Intent
-            intent.putExtra("user", user)
+            if (user != null) {
+                // Create an explicit Intent to go to HomeActivity
+                val intent = Intent(this, HomeActivity::class.java)
 
-            // Init the new Activity
-            startActivity(intent)
+                // Inject the user value into the Intent
+                intent.putExtra("user", user)
+
+                // Init the new Activity
+                startActivity(intent)
+            }
         }
     }
 }
