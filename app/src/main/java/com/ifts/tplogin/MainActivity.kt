@@ -1,5 +1,6 @@
 package com.ifts.tplogin
 
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ifts.tplogin.databinding.ActivityMainBinding
+import com.ifts.utils.hideKeyboard
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +29,14 @@ class MainActivity : AppCompatActivity() {
         // init binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // get the root
+        val rootLayout = binding.main
+
+        // hide keyboard when touch outside
+        rootLayout.setOnClickListener {
+            hideKeyboard()
+        }
 
         // use the binding to access toEditText & Button
         binding.btnLogin.setOnClickListener {
