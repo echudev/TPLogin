@@ -2,6 +2,7 @@ package com.ifts.tplogin
 
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -10,11 +11,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ifts.tplogin.databinding.ActivityMainBinding
 import com.ifts.utils.hideKeyboard
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
 
     // Binding to obtain id from view elements
     private lateinit var binding: ActivityMainBinding
+    // SharedPreferences to save the user
+    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,19 +52,28 @@ class MainActivity : AppCompatActivity() {
             try {
                 user = User(name, password)
             } catch (e: IllegalArgumentException) {
-                Toast.makeText(this, "Invalid user data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Nombre o Constraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
 
             if (user != null) {
+                // Save the user in sharedPreferences
+                saveUserToSharedPrefs(user)
                 // Create an explicit Intent to go to HomeActivity
                 val intent = Intent(this, HomeActivity::class.java)
-
                 // Inject the user value into the Intent
                 intent.putExtra("user", user)
-
                 // Init the new Activity
                 startActivity(intent)
             }
         }
+    }
+
+    private fun saveUserToSharedPrefs(user: User) {
+        // Create a sharedPreferences file named CREDENTIALS with MODE_PRIVATE (only this app can access it)
+        val sharedPreferences = getSharedPreferences("CREDENTIALS", MODE_PRIVATE)
+        // Convert the user object to a JSON string
+        val userString = Gson().toJson(user)
+        // Save the user in sharedPreferences
+        sharedPreferences.edit().putString("user", userString).apply()
     }
 }
