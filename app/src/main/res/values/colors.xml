@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- Theme colors -->
+    <color name="space_cadet">#1d3557</color>
+    <color name="bean_blue">#457b9d</color>
+    <color name="crystal">#a8dadc</color>
+    <color name="honeydew">#f1faee</color>
+    <color name="desire">#e63946</color>
+    <color name="desire_variant">#b02a37</color>
 </resources>
