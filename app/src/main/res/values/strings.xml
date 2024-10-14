@@ -8,4 +8,14 @@
     <string name="registrar">RegistrAR</string>
     <string name="user_welcome">Bienvenido %s</string>
     <string name="mantener_sesion_iniciada">Mantener sesión iniciada</string>
+    <string name="home">home</string>
+    <string name="profile">profile</string>
+    <string name="settings">settings</string>
+    <string name="welcome">welcome</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">HOLA SOY UN FRAGMENTO JAJAJA</string>
+    <string name="hello_blank_fragment_2">no entendes nada no? :(</string>
+    <string name="hello_blank_fragment_3"> acá cambias la configuracion de la app</string>
 </resources>
